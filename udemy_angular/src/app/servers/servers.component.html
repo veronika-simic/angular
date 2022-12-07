@@ -1,3 +1,7 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+<label>Server Name</label>
+<!-- $ means capture the even which in our case is user input -->
+<input type="text" class="form control" (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()"> 
     <p>{{serverCreationStatus}}</p>
 </button>
