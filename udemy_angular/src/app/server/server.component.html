@@ -1,1 +1,3 @@
-<p>Server with id {{serverId}} is {{serverStatus}}</p>
+<!-- ngStyle directive dose not need [] we use it to bind to a property of a directive -->
+<!-- ngStlye expects key value -->
+<p [ngStyle]="{backgroundColor: getColor()}">Server with id {{serverId}} is {{getServerStatus()}}</p>
