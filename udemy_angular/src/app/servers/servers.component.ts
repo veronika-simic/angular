@@ -7,21 +7,27 @@ import { Component } from '@angular/core';
 })
 export class ServersComponent {
   allowNewServer = false;
-  serverName = ''
-  serverCreationStatus = 'No server was created'
+  serverName = 'TestServer';
+  serverCreationStatus = 'No server was created';
   serverCreated = false;
+  servers = ['TestServer', 'TestServer2'];
+
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
   }
 
-  onCreateServer(){
+  onCreateServer() {
     this.serverCreated = true;
-    this.serverCreationStatus = 'Server was created and the name is ' + this.serverName;
+    this.servers.push(this.serverName);
+    this.serverCreationStatus =
+      'Server was created and the name is ' + this.serverName;
   }
 
-  onUpdateServerName(event:any){
-    this.serverName = (<HTMLInputElement>event.target).value; /* used HTMLInputElement for TS */
+  onUpdateServerName(event: any) {
+    this.serverName = (<HTMLInputElement>(
+      event.target
+    )).value; /* used HTMLInputElement for TS */
   }
 }
