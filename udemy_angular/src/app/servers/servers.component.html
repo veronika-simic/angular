@@ -2,8 +2,17 @@
 <!-- $ means capture the even which in our case is user input -->
 <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
 <!-- this ngModel will trigger onUpdateServerName and update it, also if we change serverName somewhere else in our code it will get changed here also -->
-<input type="text" class="form-control" [(ngModel)]="serverName"> <!-- no need for the onUpdateServerName method -->
-<p>{{serverName}}</p>
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()"> 
-    <p>{{serverCreationStatus}}</p>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!-- no need for the onUpdateServerName method -->
+<p>{{ serverName }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Create Server
 </button>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<!-- star is needed because ngIf is a structural directive, it either adds element or does not -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+
