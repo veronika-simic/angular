@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../shared/interfaces';
 
 @Component({
   selector: 'app-customers',
@@ -6,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
   title: string = '';
-  people: Array<{
-        id: number;
-        name: string;
-        city: string;
-        orderTotal: number;
-        customerSince: Date;
-    }> = [];
+  people: Customer[] =[]
 
   constructor() {}
   ngOnInit(): void {
