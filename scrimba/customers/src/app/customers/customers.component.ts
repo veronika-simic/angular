@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-customers',
-  templateUrl: './customers.compontent.html',
+  templateUrl: './customers.component.html',
 })
 export class CustomersComponent implements OnInit {
   title: string = '';
