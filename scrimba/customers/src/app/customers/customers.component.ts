@@ -7,7 +7,8 @@ import { Customer } from '../shared/interfaces';
 })
 export class CustomersComponent implements OnInit {
   title: string = '';
-  people: Customer[] =[]
+  people: Customer[] = [];
+  isVisible = true;
 
   constructor() {}
   ngOnInit(): void {
@@ -42,5 +43,9 @@ export class CustomersComponent implements OnInit {
         customerSince: new Date(),
       },
     ];
+  }
+
+  changeVisibility(){
+   this.isVisible = !this.isVisible
   }
 }
