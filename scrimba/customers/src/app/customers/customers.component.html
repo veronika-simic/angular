@@ -1,5 +1,6 @@
-<h1 [hidden]="!isVisible">{{title}}</h1>
+<h1 [hidden]="!isVisible">{{ title }}</h1>
 <!-- this could also be done like this <h1 [innerHTML]='title'></h1> -->
 <button (click)="changeVisibility()">Click me</button>
-<br>
-<app-customers-list></app-customers-list>
+<br />
+<!-- passing data from paren to child, we define customers in child component with Input decorator and then we pass data to it by binding it to people which are present in parent -->
+<app-customers-list [customers]="people"></app-customers-list>
