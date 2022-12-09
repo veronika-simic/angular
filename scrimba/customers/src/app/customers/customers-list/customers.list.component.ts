@@ -7,8 +7,15 @@ import { Customer } from 'src/app/shared/interfaces';
 })
 export class CustomersListComponent {
   filteredCustomers: Customer[] = [];
-  customersOrderTotal!: number;
+  customersOrderTotal = 0;
   currency = 'USD';
   constructor() {}
   ngOnInit(): void {}
+
+  calculateOrders(){
+    this.customersOrderTotal = 0;
+    this.filteredCustomers.forEach((customer: Customer) => {
+     /*  this.customersOrderTotal += customer.orderTotal; */
+    })
+  }
 }
