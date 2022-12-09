@@ -12,7 +12,7 @@
   <!-- gets displayed only if customers exist -->
   <tr *ngFor="let customer of filteredCustomers">
     <td>
-      <a href="#">{{customer.name}}</a>
+      <a href="#">{{customer.name | capitalize}}</a>
     </td>
     <td>{{customer.city}}</td>
     <td>{{customer.orderTotal}}</td>
